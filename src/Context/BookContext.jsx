@@ -7,7 +7,8 @@ export const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
   const [selectedBook, setSelectedBook] = useState(null);
-
+  const [borrowed, setBorrowed] = useState([])
+  
   // Fetch books from books.json
   useEffect(() => {
     fetch("/books.json") // Ensure books.json is in the public folder
@@ -21,11 +22,11 @@ export const BookProvider = ({ children }) => {
       .catch((err) => setError(err.message));
   }, []);
 
-  // Handle book borrowing
-  const handleBookBorrow = (title) => {
-    alert(`Book Borrowed: ${title}`);
-    setCount(count + 1);
-  };
+  const handleBookBorrow = (book) => {
+    setBorrowed([...borrowed,book])
+    setCount(count + 1)
+    alert(`Book Borrowed ${book.title}`)
+  }
 
   // Handle book card click
   const handleCardClick = (book) => {
@@ -41,6 +42,9 @@ export const BookProvider = ({ children }) => {
       value={{
         count,
         setCount,
+        borrowed,
+        setBorrowed,
+        handleBookBorrow,
         books,
         setBooks,
         error,

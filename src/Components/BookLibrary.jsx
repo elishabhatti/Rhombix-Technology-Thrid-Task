@@ -1,9 +1,10 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
 import { BookContext } from '../Context/BookContext';
+import { Link } from 'react-router-dom';
 
 function BookLibrary() {
-  const { books, selectedBook, handleCardClick } = useContext(BookContext);
+  const { books, selectedBook, handleCardClick, handleBookBorrow } = useContext(BookContext);
+
 
   return (
     <div className="pt-20">
@@ -39,12 +40,15 @@ function BookLibrary() {
                   </p>
                 </div>
                 <div>
-                  {/* Use Link to Navigate */}
-                  <Link to="/borrowed">
-                    <button className="w-full bg-[#1F1E24] py-2 rounded-md text-white">
-                      Borrow Book
-                    </button>
-                  </Link>
+                  {/* When button is clicked, pass the selected book to the handleBookBorrow function */}
+                  <Link to='/borrowed' >
+                  <button
+                    className="w-full bg-[#1F1E24] py-2 rounded-md text-white"
+                    onClick={() => handleBookBorrow(selectedBook)} // Pass selected book
+                    >
+                    Borrow Book
+                  </button>
+                    </Link>
                 </div>
               </div>
             </div>
