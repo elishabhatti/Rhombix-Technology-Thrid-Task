@@ -34,14 +34,15 @@ export default function Form({ onLogin }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter your username"
-        />
+          className='w-full p-2 rounded-md'
+          />
       </div>
 
       <div className="mb-6">
         <label
           className="block text-gray-700 text-sm font-medium mb-2"
           htmlFor="password"
-        >
+          >
           Password
         </label>
         <input
@@ -49,6 +50,7 @@ export default function Form({ onLogin }) {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className='w-full p-2 rounded-md'
           placeholder="Enter your password"
         />
       </div>

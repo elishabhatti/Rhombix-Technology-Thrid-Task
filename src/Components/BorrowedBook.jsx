@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { BookContext } from '../Context/BookContext';
+import Footer from './Footer';
 
 function BorrowedBook() {
   const { borrowed ,handleRemoveBook } = useContext(BookContext);
 
 
   return (
-    <div>
+    <div className='pt-5'>
       <h1 className="text-3xl font-bold mb-4 px-7 text-center">Borrowed Books</h1>
       <div className="flex justify-center items-center  flex-wrap">
         {borrowed.length === 0 ? (
@@ -32,6 +33,7 @@ function BorrowedBook() {
           ))
         )}
       </div>
+      <Footer />
     </div>
   );
 }

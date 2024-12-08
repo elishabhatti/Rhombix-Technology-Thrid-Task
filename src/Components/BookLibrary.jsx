@@ -1,7 +1,8 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { BookContext } from '../Context/BookContext';
 import { Link } from 'react-router-dom';
 import SearchBox from './SearchBox';
+import Footer from './Footer';
 
 function BookLibrary() {
   const {topSectionRef, selectedBook, handleBookBorrow,search,filteredBooks,handleBookSelection, setSearch } = useContext(BookContext);
@@ -82,6 +83,7 @@ function BookLibrary() {
         )}
       </div>
         <p className='w-full text-center py-3'>More Books are Coming Soon.</p>
+        <Footer />
     </div>
   );
 }

@@ -11,11 +11,11 @@ export default function App() {
 
   return (
     <div>
-      <Navbar />
       {/* Conditionally render based on login state */}
       {login ? (
         // If logged in, show the main app content
         <>
+        <Navbar />
           <Routes>
             {/* Route for BorrowedBook */}
             <Route path="/borrowed" element={<BorrowedBook />} />
@@ -29,7 +29,6 @@ export default function App() {
           <Form onLogin={() => setLogin(true)} />
         </div>
       )}
-      <Footer />
     </div>
   );
 }
