@@ -41,7 +41,7 @@ function BookLibrary() {
       <SearchBox search={search} setSearch={setSearch} />
 
       {/* Categories Filter */}
-      <div className="my-4">
+      <div className="m-4">
         <select
           id="genreSelect"
           className="p-2 border border-gray-300 rounded-md w-full sm:w-auto"
