@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
-
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,33 +10,33 @@ function Navbar() {
   };
 
   return (
-    <div className="bg-gray-900 text-white px-5 py-3 flex justify-between items-center">
-      {/* Logo */}
-      <h1 className="text-2xl uppercase">Novel Nest</h1>
-
-      {/* Menu Icon for Mobile */}
-      <button
-        className="text-white text-2xl md:hidden focus:outline-none"
-        onClick={toggleMenu}
-      >
-        {isMenuOpen ? <FiX /> : <FiMenu />}
-      </button>
+    <div className="bg-gray-900 text-white px-5 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
+      {/* Logo and Menu Icon */}
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl uppercase">Novel Nest</h1>
+        <button
+          className="text-white text-2xl md:hidden focus:outline-none"
+          onClick={toggleMenu}
+        >
+          {isMenuOpen ? <FiX /> : <FiMenu />}
+        </button>
+      </div>
 
       {/* Nav Links */}
       <nav
-        className={`absolute top-16 left-0 w-full bg-gray-900 p-5 space-y-3 md:space-y-0 md:static md:flex md:items-center md:justify-between md:p-0 ${
-          isMenuOpen ? "block" : "hidden"
+        className={`flex-col md:flex-row md:flex md:items-center md:space-x-4 ${
+          isMenuOpen ? "flex" : "hidden"
         }`}
       >
         <Link
           to="/borrowed"
-          className="block text-lg text-white hover:text-gray-400 md:inline md:mx-3"
+          className="text-lg text-white hover:text-gray-400 px-2 py-1"
         >
           Borrowed Books
         </Link>
         <Link
           to="/"
-          className="block text-lg text-white hover:text-gray-400 md:inline md:mx-3"
+          className="text-lg text-white hover:text-gray-400 px-2 py-1"
         >
           Book Library
         </Link>
