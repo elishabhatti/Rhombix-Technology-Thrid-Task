@@ -54,7 +54,7 @@ function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-sm text-gray-500 mt-6">
-          © 2024 Your Book Library. All Rights Reserved.
+          © 2024 Novel Nest. All Rights Reserved.
         </div>
       </div>
     </footer>
