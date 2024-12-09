@@ -10,30 +10,22 @@ function BookLibrary() {
     selectedBook,
     handleBookBorrow,
     search,
+    setSearch,
     filteredBooks,
     handleBookSelection,
-    setSearch,
   } = useContext(BookContext);
 
-  const [books, setBooks] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("all");
   const [filteredCategoryBooks, setFilteredCategoryBooks] = useState([]);
-
-  // Fetch books data
-  useEffect(() => {
-    fetch("/books.json")
-      .then((response) => response.json())
-      .then((data) => setBooks(data));
-  }, []);
 
   // Filter books by selected genre
   useEffect(() => {
     if (selectedGenre === "all") {
-      setFilteredCategoryBooks(books); // Show all books
+      setFilteredCategoryBooks(filteredBooks); // Use filteredBooks from context
     } else {
-      setFilteredCategoryBooks(books.filter((book) => book.genre === selectedGenre));
+      setFilteredCategoryBooks(filteredBooks.filter((book) => book.genre === selectedGenre));
     }
-  }, [selectedGenre, books]);
+  }, [selectedGenre, filteredBooks]);
 
   return (
     <div>
