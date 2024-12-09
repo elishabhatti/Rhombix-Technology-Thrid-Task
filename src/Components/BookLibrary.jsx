@@ -13,6 +13,7 @@ function BookLibrary() {
 
       {/* Top Section */}
       <div id="topSection" ref={topSectionRef}>
+      <h1 className="text-3xl font-bold mb-4 px-7 mt-3  text-center">Borrowed Books</h1>
         {selectedBook && (
           <div className="flex justify-center items-center mb-8">
             <div className="w-[750px] flex border-b border-b-gray-500 m-3 p-4">
